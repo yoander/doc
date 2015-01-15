@@ -1,0 +1,48 @@
+h1. avtools
+
+h2. Convertir fichero de video para ver en un reproductor de DVD doméstico
+
+Algunos DVD domésticos no soportan ficheros de videos de alta definición por lo que se hace necesario convertirlo a un formato soportado, para ello
+
+* Busque las especificaciones de su DVD doméstico 
+* Mire los detalles del fichero de video que desea convertir usando [[MediaInfo]].
+* Use una herramienta de conversión de video, en este caso usaremos avconv que forma parte de la suite Libav  
+
+El siguiente ejemplo asume  que su DVD doméstico soporta:
+
+* El formato de video mpeg4 perfil simple, 
+* El formato de audio mp3 
+* Un tamaño de frame de 720 (ancho) por 576 (alto).
+
+h2. Instalar Libav y  libmp3lame en Debian GNU/Linux
+
+bc. $ sudo apt-get install libav-tools libmp3lame0
+
+h2. Realizar la conversión
+
+bc. $ avconv -i fichero-origen -f avi -vtag divx -c:v mpeg4 -c:a libmp3lame -s:v 720x576 -aspect 16:9 -qscale 3 fichero-destino
+
+*Ripping*
+
+bc. $ avconv -i snatch_1.vob -f avi -c:v mpeg4 -b:v 800k -g 300 -bf 2 -c:a libmp3lame -b:a 128k snatch.avi
+
+
+donde:
+
+- *-f:* Formato del  fichero destino, por lo general avconv adivina el formato a partir de la extensión del fichero destino
+
+- **-vtag,** Especifica que usaremos fourcc **divx** para el codec de video mpeg4 (Perfil Simple) 
+
+- **-c:v,** Código de video que usaremos durante la conversión
+
+- **-c:a,** Código de audio que usaremos durante la  conversión
+
+- **-s:v,** Tamaño del frame del fichero resultante
+
+- **-aspect,** Radio y aspecto que tendrá el fichero resultante. Se recomienda que sea el mismo que el fichero original para lograr buena calidad de imagen
+
+- **-qscale,** Valor entre 1 - 31. Un valor de 1 significa que el fichero resultante tendrá la misma calidad que el fichero original
+
+h2. Lecturas recomendadas
+
+- man avconv

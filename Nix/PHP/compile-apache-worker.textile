@@ -1,0 +1,56 @@
+h1. Compilar php-5.6 con soporte para Apache worker
+
+El módulo apache worker implementa un modelo híbrido multihilo mutliproceso permitiendo servir un gran número de peticiones usando menor número de recursos que el módulo prefork
+
+h2. Descargar php-5.6.4
+
+bc. wget http://us1.php.net/distributions/php-5.6.4.tar.xz
+
+h2. Descompactar 
+
+bc. tar xJvf php-5.6.4.tar.xz
+
+h3. Descargar y ejecutar script para instalar dependencias
+
+bc. $ wget --no-check-certificate https://raw.githubusercontent.com/yoander/sysadmin/master/shscript/php-dev-install-dep.sh && \
+        chmod a+x -c php-dev-install-dep.sh && \
+        ./php-dev-install-dep.sh apache-worker
+
+h3. Descargar script para compilar php
+
+bc. $ wget --no-check-certificate https://raw.githubusercontent.com/yoander/sysadmin/master/shscript/php-build.sh && \
+        chmod a+x -c php-build.sh
+
+h3. Compilar php
+
+bc. $./php-build.sh -at php-5.6.4
+
+donde -a = Soporte para apache, -t = soporte multihilo (thread safe)
+
+h3. Instalar
+
+bc. $ cd php-5.6.4 && sudo make install
+
+h3. Crear fichero de configuración de php
+
+*Desarollo*
+
+bc. sudo cp -v php.ini-development /etc/php/php.ini
+
+*Producción*
+
+bc. sudo cp -v php.ini /etc/php/php.ini
+
+h3. Activar OpCache
+
+If usa Xdebug asegúrese que OpCache se carga primero
+
+bc. $ sudo bash -c 'echo "zend_extension=opcache.so" > /etc/php/conf.d/20-opcache.ini'
+
+h3. Reiniciar el Apache
+
+bc. sudo service apache2 restart
+
+h3. Comprobamos
+
+bc. $ firefox http://localhost/info.php
