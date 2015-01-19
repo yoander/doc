@@ -1,0 +1,62 @@
+h1. Compilar git 
+
+Git es un sistema de control de versiones distribuido, originalmente ideado y desarrollado por Linus Torvald, que goza de gran reputación debido a su robustez, flexibilidad y eficiencia. Git está en constante evolución por tanto si su distribución no esta al día con las últimas características de Git entonces puede echarle mano a la consola y compilarlo desde su código fuente.
+
+h2. Descargar git
+
+bc. $ wget https://www.kernel.org/pub/software/scm/git/git-2.2.1.tar.xz
+
+h2. Decompactar
+
+bc. $ tar xJvf git-2.2.1.tar.xz 
+
+h2. Instalar dependencias
+
+bc. $ sudo bash -c 'apt-get -y install make autoconf gcc libssl-dev libcurl4-openssl-dev libexpat1-dev &&
+apt-get install -y ----no-install-recommends gettext' 
+
+h2. Configurar e instalar
+
+bc.. $ ./configure --prefix=/usr/local/ --with-tcltk=no
+$ make
+$ sudo make install
+
+h2. Descargar e instalar las páginas man
+
+bc. $ wget https://www.kernel.org/pub/software/scm/git/git-manpages-2.2.1.tar.xz
+$ sudo tar xJv -C /usr/local/share/man -f git-manpages-2.2.1.tar.xz
+
+h2. Instalar bash-git-prompt
+
+"bash-git-prompt":https://github.com/magicmonty/bash-git-prompt ofrece información de su repo en el prompt de su shell.
+
+bc. $ cd ~ && git clone https://github.com/magicmonty/bash-git-prompt.git .bash-git-prompt
+
+*Agregar al .bashrc*
+
+bc.. # gitprompt configuration
+
+   # Set config variables first
+   GIT_PROMPT_ONLY_IN_REPO=1
+
+   # GIT_PROMPT_FETCH_REMOTE_STATUS=0   # uncomment to avoid fetching remote status
+
+   # GIT_PROMPT_START=...    # uncomment for custom prompt start sequence
+   # GIT_PROMPT_END=...      # uncomment for custom prompt end sequence
+
+   # as last entry source the gitprompt script
+   # GIT_PROMPT_THEME=Custom # use custom .git-prompt-colors.sh
+   # GIT_PROMPT_THEME=Solarized # use theme optimized for solarized color scheme
+   source ~/.bash-git-prompt/gitprompt.sh
+  
+h2. Instalar git-completion.bash
+
+git-completion.bash autocompleta comandos de Git.
+
+bc. $ wget https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash -O .git-completion.bash
+
+*Agregamos al .bashrc*
+
+bc. source ~/.git-completion.bash
+
+Ahora podemos disfrutar a nuestras anchas un flamante control de versiones
