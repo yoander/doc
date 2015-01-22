@@ -1,0 +1,53 @@
+h1. Comandos
+
+h2. Encontrar ficheros y ejecutar una acción sobre ellos
+
+bc. $ find DIR -name nombre-a-buscar -type f -print0  | while read -d $'\0' file; do sentencias; done
+
+h2. Encuestar al servidores NS de google.com (Verficar cnx cada 30 s) 
+
+bc. $ watch -n 30 "dig www.google.com|sed -s 's/^;[^(www)].*//'|uniq
+
+h2. Renombrar en masa
+
+prename es un utilitario desarrollado en Perl por Larry Wall (Creador del lenguage Perl) y mejorado por Robin Barker, el cual permite renombrar en masas. prename encuentra todos los ficheros cuyo nombre case con un patron especificado (''exp-regular''). Este utilitario forma parte del paquete perl en Debian GNU/Linux.
+
+**Sinopsis**
+
+bc. $ prename [-v] [-n] [-f] exp-regular ficheros
+
+**donde:**
+
+**-v, --verbose:** Muestra el nombre de los ficheros que fueron renombrados exitosamente 
+**-n, --noact:** Simula la operación de renombrado 
+**-f, --force: **Sobreescribe los ficheros existentes	
+**exp-regular:** Es un patrón compatible con PREC
+
+h3. Ejemplos
+
+Elimina la extensión .bak de todos los ficheros del DIR actual
+
+bc. $ rename 's/\.bak$//' *.bak
+
+Covierte a minúsculas el nombre de todos ficheros del DIR actual 
+
+bc. $ rename 'y/A-Z/a-z/' *
+
+
+Encuentra todos los ficheros cuyo nombre contiene más de un guión y sustituye los guiones por uno solo 
+
+bc. $ rename 's/-{2,}/-/g' *
+
+
+h2. awk
+
+bc. $ awk -F'|' '{ if ($8 == 'GB' && $9 != 0) print $1;}' file
+
+Encontrar repetidos
+
+bc. prev=''; for num in $(awk -F'|' '{ print $2;}' sub_metro_area.txt |sort); do  [[ $prev == $num ]] && echo $prev; prev=$num; done
+
+h2. Google mail
+
+bc.. elems=document.getElementsByName('t'); for (var i = 0; i < elems.length;i++) {elems[i].checked = true;}
+
