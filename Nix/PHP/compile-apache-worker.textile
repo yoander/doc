@@ -1,8 +1,8 @@
-h1. Compilar php-5.6 con soporte para Apache worker
+h1. Compilar php-5.6 con soporte para Apache Worker
 
-El módulo apache worker implementa un modelo híbrido multihilo mutliproceso permitiendo servir un gran número de peticiones usando menor número de recursos que el módulo prefork por tanto es una opción factible si su sitio tiene problemas de carga.
+El módulo Apache Worker implementa un modelo híbrido multihilo-mutliproceso permitiendo servir un gran número de peticiones usando menor número de recursos que el módulo Prefork por tanto es una opción factible si su sitio tiene problemas de carga. Otras de las ventajas de usar Apache Worker es que permite crear aplicaciones multihilos haciendo uso de la extensión "pthreads ":http://php.net/manual/es/book.pthreads.php
 
-Nota: A pesar de que el equipo de desarrollo de PHP no recomienda usar PHP con los módulos threaded del servidor Apache debido a que algunas extensiones no son "thread safe"  y por tanto pueden tener un comportamiento erróneo he probado con éxito 2 aplicaciones usadas a gran escala: Wordpress y phpMyAdmin. 
+Nota: A pesar de que el equipo de desarrollo de PHP "no recomienda":http://php.net/manual/en/faq.installation.php#faq.installation.apache2 usar PHP con los módulos threaded del servidor Apache debido a que algunas extensiones no son "thread safe"  y por tanto pueden tener un comportamiento erróneo he probado con éxito 2 aplicaciones usadas a gran escala: Wordpress y phpMyAdmin. 
 
 h2. Descargar php-5.6.4
 
