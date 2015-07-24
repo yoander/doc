@@ -30,3 +30,11 @@ Go to http://php.net site Downloads section and select the PHP-6.X.X version tha
 $ wget http://us1.php.net/distributions/php-5.6.11.tar.xz
 ```
 
+## Unpacking PHP packages
+
+In the previous step we download a tar.xz file so we can unpackage it using tar tool
+
+```bash
+$ tar xJvf php-5.6.11.tar.xz
+```
+
