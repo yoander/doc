@@ -32,9 +32,14 @@ $ wget http://us1.php.net/distributions/php-5.6.11.tar.xz
 
 ## Unpacking PHP packages
 
-In the previous step we download a tar.xz file so we can unpackage it using tar tool
+In the previous step we download a php-5.6.11.tar.xz file so we can unpackage it using tar tool
 
 ```bash
 $ tar xJvf php-5.6.11.tar.xz
 ```
+where
 
+*x* = extract
+*J* = handle [https://en.wikipedia.org/wiki/Xz|xz file format]
+*v* = verbose
+*f* = file
