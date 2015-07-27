@@ -39,7 +39,7 @@ $ tar xJvf php-5.6.11.tar.xz
 ```
 where
 
-*x* = extract
-*J* = handle [xz](https://en.wikipedia.org/wiki/Xz) file format
-*v* = verbose
-*f* = file
+**x** = extract,
+**J** = handle [xz](https://en.wikipedia.org/wiki/Xz) file format,
+**v** = verbose,
+**f** = file
