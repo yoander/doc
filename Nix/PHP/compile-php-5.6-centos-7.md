@@ -46,7 +46,7 @@ where
 
 ## Installing GNU Compiler Collection and essential tools for compiling process
 ```bash
-# yum -y install gcc make automake autoconf bison flex libtool libstdc++-devel
+# yum -y install gcc gcc-c++ make automake autoconf bison flex libtool libstdc++-devel
 ```
 
 ## Installing dependencies
