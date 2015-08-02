@@ -59,7 +59,7 @@ php-build.sh script is helper for PHP compilation process. Enable the most used 
 
 ## Installing dependencies
 
-We will compile PHP with XML, SSL, PCRE, SQLite, bzip2, curl, GD, mcrypt ... support. mcrypt is available in [EPEL](https://fedoraproject.org/wiki/EPEL) the you need to type
+We will compile PHP with XML, SSL, PCRE, SQLite, bzip2, curl, GD, mcrypt ... support. mcrypt is available in [EPEL](https://fedoraproject.org/wiki/EPEL) repo then you need to type
 
 ```
 # yum install epel-release
