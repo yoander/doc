@@ -43,3 +43,8 @@ where
 **J** = handle [xz](https://en.wikipedia.org/wiki/Xz) file format,
 **v** = verbose,
 **f** = file
+
+## Installing GNU Compiler Collection and essential tools for compiling proccess
+```bash
+# yum -y install gcc make autoconf bison flex
+```
