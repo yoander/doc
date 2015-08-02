@@ -83,7 +83,7 @@ First create necessary DIR that will be used during compilation processs
 configure: error: Could not find libpcre.(a|so) in /usr
 
 ```
-$ ln -s /usr/lib64/libpcre.so.1.2.0 /usr/lib64/libpcre
+$ ln -s /usr/lib64/libpcre.so.1.2.0 /usr/lib64/libpcre.so
 ```
 
 Then
