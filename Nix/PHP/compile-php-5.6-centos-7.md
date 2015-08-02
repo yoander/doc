@@ -46,7 +46,7 @@ where
 
 ## Installing GNU Compiler Collection and essential tools for compiling process
 ```bash
-# yum -y install gcc make automake autoconf bison flex libtool
+# yum -y install gcc make automake autoconf bison flex libtool libstdc++-devel
 ```
 
 ## Download php-build.sh script from [Github](https://raw.githubusercontent.com/yoander/sysadmin/master/shscript/php-build.sh)
@@ -55,4 +55,12 @@ php-build.sh script is helper for PHP compilation process. Enable the most used 
 
 ``` bash
 # wget https://raw.githubusercontent.com/yoander/sysadmin/master/shscript/php-build.sh
+```
+
+## Installing dependencies
+
+We will compile PHP with XML, SSL, PCRE, SQLite, bzip2, curl, GD, mcrypt ... support
+
+```
+# yum -y libxml2-devel openssl openssl-devel pcre-devel sqlite-devel bzip2-devel libcurl-devel libicu-devel gd-devel readline-devel 
 ```
