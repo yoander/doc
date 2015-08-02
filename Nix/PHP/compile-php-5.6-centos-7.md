@@ -49,14 +49,6 @@ where
 # yum -y install gcc make automake autoconf bison flex libtool libstdc++-devel
 ```
 
-## Download php-build.sh script from [Github](https://raw.githubusercontent.com/yoander/sysadmin/master/shscript/php-build.sh)
-
-php-build.sh script is helper for PHP compilation process. Enable the most used extensions as: curl, openssl, intl, mysql, pcre, ... and allows to install PHP in custom dir, offers options to compile PHP with Apache (prefork or worker) or fpm support. If you compile PHP with fpm support you must edit php-build.sh and set the user and group under the fpm process will be run
-
-``` bash
-# wget https://raw.githubusercontent.com/yoander/sysadmin/master/shscript/php-build.sh
-```
-
 ## Installing dependencies
 
 We will compile PHP with XML, SSL, PCRE, SQLite, bzip2, curl, GD, mcrypt ... support. mcrypt is available in [EPEL](https://fedoraproject.org/wiki/EPEL) repo then you need to type
@@ -71,3 +63,27 @@ After
 # yum -y libxml2-devel openssl openssl-devel pcre-devel sqlite-devel bzip2-devel\
 libcurl-devel libicu-devel gd-devel readline-devel libmcrypt-devel
 ```
+
+## Download php-build.sh script from [Github](https://raw.githubusercontent.com/yoander/sysadmin/master/shscript/php-build.sh)
+
+php-build.sh script is helper for PHP compilation process. Enable the most used extensions as: curl, openssl, intl, mysql, pcre, ... and allows to install PHP in custom dir, offers options to compile PHP with Apache (prefork or worker) or fpm support. If you compile PHP with fpm support you must edit php-build.sh and set the user and group under the fpm process will be run
+
+``` bash
+# wget https://raw.githubusercontent.com/yoander/sysadmin/master/shscript/php-build.sh
+```
+
+## Build PHP with fpm support
+
+First create necessary DIR that will be used during compilation processs
+
+```bash
+# mkdir -p /etc/php /etc/php/conf.d /usr/lib/php/modules /usr/share/pear
+```
+
+Then
+
+```
+# ./php-build.sh -f php-5.6.11
+```
+
+Script will notify you must c
