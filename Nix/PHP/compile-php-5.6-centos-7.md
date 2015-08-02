@@ -44,9 +44,9 @@ where
 **v** = verbose,
 **f** = file
 
-## Installing GNU Compiler Collection and essential tools for compiling proccess
+## Installing GNU Compiler Collection and essential tools for compiling process
 ```bash
-# yum -y install gcc make autoconf bison flex
+# yum -y install gcc make automake autoconf bison flex libtool
 ```
 
 ## Download php-build.sh script from [Github](https://raw.githubusercontent.com/yoander/sysadmin/master/shscript/php-build.sh)
