@@ -27,7 +27,7 @@ If you want to get the last features from PHP such us: variadic functions, argum
 Go to http://php.net site Downloads section and select the PHP-6.X.X version that you want to compile (5.6.11 at time of writing this articule), select your nearest mirror and downloat it then upload to your server using **rsycn** or **scp**. Another simple solution is typing in your console from your server
 
 ```bash
-$ wget http://us1.php.net/distributions/php-5.6.11.tar.xz
+# wget http://us1.php.net/distributions/php-5.6.11.tar.xz
 ```
 
 ## Unpacking PHP packages
@@ -35,7 +35,7 @@ $ wget http://us1.php.net/distributions/php-5.6.11.tar.xz
 In the previous step we download a php-5.6.11.tar.xz file so we can unpackage it using tar tool
 
 ```bash
-$ tar xJvf php-5.6.11.tar.xz
+# tar xJvf php-5.6.11.tar.xz
 ```
 where
 
@@ -47,4 +47,12 @@ where
 ## Installing GNU Compiler Collection and essential tools for compiling proccess
 ```bash
 # yum -y install gcc make autoconf bison flex
+```
+
+## Download php-build.sh script from [Github](https://raw.githubusercontent.com/yoander/sysadmin/master/shscript/php-build.sh)
+
+php-build.sh script is helper for PHP compilation process. Enable the most used extensions as: curl, openssl, intl, mysql, pcre, ... and allows to install PHP in custom dir, offers options to compile PHP with Apache (prefork or worker) or fpm support. If you compile PHP with fpm support you must edit php-build.sh and set the user and group under the fpm process will be run
+
+``` bash
+# wget https://raw.githubusercontent.com/yoander/sysadmin/master/shscript/php-build.sh
 ```
