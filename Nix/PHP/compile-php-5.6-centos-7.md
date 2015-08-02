@@ -80,6 +80,10 @@ First create necessary DIR that will be used during compilation processs
 # mkdir -p /etc/php /etc/php/conf.d /usr/lib/php/modules /usr/share/pear
 ```
 
+```
+$ ln -s /usr/lib64/libpcre.so.1.2.0 /usr/lib64/libpcre
+```
+
 Then
 
 ```
