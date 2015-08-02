@@ -62,5 +62,6 @@ php-build.sh script is helper for PHP compilation process. Enable the most used 
 We will compile PHP with XML, SSL, PCRE, SQLite, bzip2, curl, GD, mcrypt ... support
 
 ```
-# yum -y libxml2-devel openssl openssl-devel pcre-devel sqlite-devel bzip2-devel libcurl-devel libicu-devel gd-devel readline-devel 
+# yum -y libxml2-devel openssl openssl-devel pcre-devel sqlite-devel bzip2-devel\
+libcurl-devel libicu-devel gd-devel readline-devel libmcrypt-devel
 ```
