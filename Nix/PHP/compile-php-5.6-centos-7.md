@@ -95,5 +95,13 @@ Then
 ## Install
 
 ```bash
-#  cd php-5.6.11 && make install make install 
+#  cd php-5.6.11 && make install
+```
+
+## Creating configuration file
+
+PHP source code comes with 2 ini files version: development and production then how we're compiling from PROD server we type the following command. Adjust the ini directives according your needed
+
+```bash
+# cp -v php.ini-production /etc/php/php.ini
 ```
