@@ -80,7 +80,7 @@ First create necessary DIR that will be used during compilation processs
 # mkdir -p /etc/php/conf.d /usr/lib/php/modules /usr/share/pear
 ```
 
-Create PCRE symbolic link
+Create PCRE symbolic link to avoid: "configure: error: Could not find libpcre.(a|so) in /usr"
 
 ```
 $ ln -s /usr/lib64/libpcre.so.1.2.0 /usr/lib64/libpcre.so
