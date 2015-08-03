@@ -100,7 +100,7 @@ Then
 
 ## Creating configuration file
 
-PHP source code comes with 2 ini files version: development and production then how we're compiling from PROD server we type the following command. Adjust the ini directives according your needed
+PHP source code comes with 2 ini files versions: development and production how we're compiling for PROD server we type the following command. Adjust the ini directives according your needed
 
 ```bash
 # cp -v php.ini-production /etc/php/php.ini
