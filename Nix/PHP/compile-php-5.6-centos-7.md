@@ -113,3 +113,9 @@ PHP-FPM (FastCGI Process Manager) is an alternative FastCGI implementation for P
 ```bash
 # cp -pv /etc/php/php-fpm.conf.default /etc/php/php-fpm.conf
 ```
+
+## Creating PHP-FPM init service
+
+```bash
+# cp -v ./sapi/fpm/php-fpm.service.in /usr/lib/systemd/system/php-fpm.service
+```
