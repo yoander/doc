@@ -105,3 +105,11 @@ PHP source code comes with 2 ini files versions: development and production how 
 ```bash
 # cp -v php.ini-production /etc/php/php.ini
 ```
+
+## Creating PHP-FPM configuration file
+
+PHP-FPM (FastCGI Process Manager) is an alternative FastCGI implementation for PHP, bundled with the official PHP distribution since version 5.3.3. Adjust fpm values according your needed
+
+```bash
+# cp -pv /etc/php/php-fpm.conf.default /etc/php/php-fpm.conf
+```
