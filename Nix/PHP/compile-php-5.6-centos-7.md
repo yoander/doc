@@ -77,10 +77,10 @@ php-build.sh script is helper for PHP compilation process. Enable the most used 
 First create necessary DIR that will be used during compilation processs
 
 ```bash
-# mkdir -p /etc/php /etc/php/conf.d /usr/lib/php/modules /usr/share/pear
+# mkdir -p /etc/php/conf.d /usr/lib/php/modules /usr/share/pear
 ```
 
-configure: error: Could not find libpcre.(a|so) in /usr
+Create PCRE symbolic link
 
 ```
 $ ln -s /usr/lib64/libpcre.so.1.2.0 /usr/lib64/libpcre.so
@@ -92,4 +92,8 @@ Then
 # ./php-build.sh -f php-5.6.11
 ```
 
-Script will notify you must c
+## Install
+
+```bash
+#  cd php-5.6.11 && make install make install 
+```
