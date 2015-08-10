@@ -69,7 +69,7 @@ libcurl-devel libicu-devel gd-devel readline-devel libmcrypt-devel
 php-build.sh script is helper for PHP compilation process. Enable the most used extensions as: curl, openssl, intl, mysql, pcre, ... and allows to install PHP in custom dir, offers options to compile PHP with Apache (prefork or worker) or fpm support. If you compile PHP with fpm support you must edit php-build.sh and set the user and group under the fpm process will be run
 
 ``` bash
-# wget https://raw.githubusercontent.com/yoander/sysadmin/master/shscript/php-build.sh
+# wget https://raw.githubusercontent.com/yoander/sysadmin/master/shscript/php-build.sh && chmod a+x php-build.sh
 ```
 
 ## Build PHP with fpm support
