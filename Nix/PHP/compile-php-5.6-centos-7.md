@@ -61,7 +61,7 @@ After
 
 ```
 # yum -y libxml2-devel openssl openssl-devel pcre-devel sqlite-devel bzip2-devel\
-libcurl-devel libicu-devel gd-devel readline-devel libmcrypt-devel
+libcurl-devel libicu-devel gd-devel readline-devel libmcrypt-devel systemd-devel
 ```
 
 ## Download php-build.sh script from [Github](https://raw.githubusercontent.com/yoander/sysadmin/master/shscript/php-build.sh)
