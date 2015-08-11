@@ -73,7 +73,7 @@ php-build.sh script is helper for PHP compilation process. Enable the most used 
 chmod a+x php-build.sh
 ```
 
-## Build PHP with fpm support
+## Build PHP with fpm support and systemd integration
 
 First create necessary DIR that will be used during compilation processs
 
@@ -90,8 +90,10 @@ Create PCRE symbolic link to avoid: "configure: error: Could not find libpcre.(a
 Then
 
 ```
-# ./php-build.sh -f php-5.6.11
+# ./php-build.sh -fs php-5.6.11
 ```
+
+where *-f* = fpm support, *s* = systemd integration
 
 ## Install
 
