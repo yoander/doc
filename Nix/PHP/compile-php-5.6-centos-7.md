@@ -93,7 +93,7 @@ Then
 # ./php-build.sh -fs php-5.6.11
 ```
 
-where *-f* = fpm support, *s* = systemd integration
+where **-f** = fpm support, **s** = systemd integration
 
 ## Install
 
@@ -120,5 +120,5 @@ PHP-FPM (FastCGI Process Manager) is an alternative FastCGI implementation for P
 ## Creating PHP-FPM init service
 
 ```bash
-# cp -v ./sapi/fpm/php-fpm.service.in /usr/lib/systemd/system/php-fpm.service
+# cp -v ./sapi/fpm/php-fpm.service /usr/lib/systemd/system/php-fpm.service
 ```
