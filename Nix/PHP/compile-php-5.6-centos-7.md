@@ -122,3 +122,10 @@ PHP-FPM (FastCGI Process Manager) is an alternative FastCGI implementation for P
 ```bash
 # cp -v ./sapi/fpm/php-fpm.service /usr/lib/systemd/system/php-fpm.service
 ```
+
+If the user and group under the fpm process will be run does not exists then you must created it before start php-fpm service.
+
+```bash
+# groupadd www-data &&  useradd -M -s /usr/sbin/nologin -g www-data www-data
+```
+
