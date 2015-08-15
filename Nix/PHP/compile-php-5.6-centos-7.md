@@ -117,6 +117,14 @@ PHP-FPM (FastCGI Process Manager) is an alternative FastCGI implementation for P
 # cp -pv /etc/php/php-fpm.conf.default /etc/php/php-fpm.conf
 ```
 
+## Enable OpCache
+
+OPcache improves PHP performance by storing precompiled script bytecode in shared memory, thereby removing the need for PHP to load and parse scripts on each request. 
+
+```bash
+# echo "zend_extension=opcache.so" > /etc/php/conf.d/20-opcache.ini
+```
+
 ## Creating PHP-FPM init service
 
 ```bash
