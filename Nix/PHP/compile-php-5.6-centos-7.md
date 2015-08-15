@@ -27,7 +27,7 @@ If you want to get the last features from PHP such us: variadic functions, argum
 Go to http://php.net site Downloads section and select the PHP-6.X.X version that you want to compile (5.6.12 at time of writing this articule), select your nearest mirror and downloat it then upload to your server using **rsycn** or **scp**. Another simple solution is typing in your console from your server
 
 ```bash
-# wget http://us1.php.net/distributions/php-5.6.11.tar.xz
+# wget http://us1.php.net/distributions/php-5.6.12.tar.xz
 ```
 
 ## Unpacking PHP packages
@@ -35,7 +35,7 @@ Go to http://php.net site Downloads section and select the PHP-6.X.X version tha
 In the previous step we download a php-5.6.11.tar.xz file so we can unpackage it using tar tool
 
 ```bash
-# tar xJvf php-5.6.11.tar.xz
+# tar xJvf php-5.6.12.tar.xz
 ```
 where
 
@@ -90,7 +90,7 @@ Create PCRE symbolic link to avoid: "configure: error: Could not find libpcre.(a
 Then
 
 ```
-# ./php-build.sh -fs php-5.6.11
+# ./php-build.sh -fs php-5.6.12
 ```
 
 where **-f** = fpm support, **s** = systemd integration
@@ -98,7 +98,7 @@ where **-f** = fpm support, **s** = systemd integration
 ## Install
 
 ```bash
-#  cd php-5.6.11 && make install
+#  cd php-5.6.12 && make install
 ```
 
 ## Creating configuration file
