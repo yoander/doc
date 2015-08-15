@@ -173,3 +173,8 @@ ago 14 23:30:13 localhost.localdomain systemd[1]: Starting The PHP FastCGI Proce
 ago 14 23:30:13 localhost.localdomain systemd[1]: Started The PHP FastCGI Process Manager.
 ```
 
+## NGINX
+
+```bash
+# yum -y install epel-release && yum -y install nginx
+```
