@@ -126,6 +126,6 @@ PHP-FPM (FastCGI Process Manager) is an alternative FastCGI implementation for P
 If the user and group under the fpm process will be run does not exists then you must created it before start php-fpm service.
 
 ```bash
-# groupadd www-data &&  useradd -M -s /usr/sbin/nologin -g www-data www-data
+# groupadd --system www-data && useradd --system -m -d /var/www  -s /usr/sbin/nologin -g www-data www-data
 ```
 
