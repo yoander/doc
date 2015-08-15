@@ -126,6 +126,14 @@ PHP-FPM (FastCGI Process Manager) is an alternative FastCGI implementation for P
 If the user and group under the fpm process will be run does not exists then you must created it before start php-fpm service.
 
 ```bash
-# groupadd --system www-data && useradd --system -m -d /var/www  -s /usr/sbin/nologin -g www-data www-data
+# groupadd --system www-data && \ 
+useradd --system -m -d /var/www  -s /usr/sbin/nologin -g www-data www-data
 ```
 
+Before command created the system group and system user: www-data where **-m** = create home DIR if not exsist, **-d** = user home DIR, **-s** = login shell (no login shell for this case because www-data was not created for login purpose), **-g** = what groups this user belongs to. 
+
+For security reasons we will change the owner, group and perms for /var/www
+
+```bash
+# chown root:root -c /var/www/ && chmod 755  /var/www/ 
+```
