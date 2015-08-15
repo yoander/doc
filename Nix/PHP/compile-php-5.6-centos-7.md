@@ -60,7 +60,7 @@ We will compile PHP with XML, SSL, PCRE, SQLite, bzip2, curl, GD, mcrypt ... sup
 After
 
 ```
-# yum -y install libxml2-devel openssl openssl-devel pcre-devel sqlite-devel bzip2-devel\
+# yum -y install libxml2-devel openssl openssl-devel pcre-devel sqlite-devel bzip2-devel \
 libcurl-devel libicu-devel gd-devel readline-devel libmcrypt-devel systemd-devel
 ```
 
