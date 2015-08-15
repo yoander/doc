@@ -54,13 +54,13 @@ where
 We will compile PHP with XML, SSL, PCRE, SQLite, bzip2, curl, GD, mcrypt ... support. mcrypt is available in [EPEL](https://fedoraproject.org/wiki/EPEL) repo then you need to type
 
 ```
-# yum install epel-release
+# yum -y install epel-release
 ```
 
 After
 
 ```
-# yum -y libxml2-devel openssl openssl-devel pcre-devel sqlite-devel bzip2-devel\
+# yum -y install libxml2-devel openssl openssl-devel pcre-devel sqlite-devel bzip2-devel\
 libcurl-devel libicu-devel gd-devel readline-devel libmcrypt-devel systemd-devel
 ```
 
