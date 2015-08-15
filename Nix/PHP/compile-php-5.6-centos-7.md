@@ -137,3 +137,15 @@ For security reasons we will change the owner, group and perms for /var/www
 ```bash
 # chown root:root -c /var/www/ && chmod 755  /var/www/ 
 ```
+
+## Iniciamos el servicio fpm
+
+```bash
+# systemctl start php-fpm.service
+```
+
+## Comprobamos el estado del servicio
+```bash
+# systemctl start php-fpm.service
+```
+
