@@ -149,3 +149,19 @@ For security reasons we will change the owner, group and perms for /var/www
 # systemctl start php-fpm.service
 ```
 
+should show something like this
+```
+php-fpm.service - The PHP FastCGI Process Manager
+   Loaded: loaded (/usr/lib/systemd/system/php-fpm.service; disabled)
+   Active: active (running) since vie 2015-08-14 23:30:13 EDT; 2min 42s ago
+ Main PID: 32374 (php-fpm)
+   Status: "Processes active: 0, idle: 2, Requests: 0, slow: 0, Traffic: 0req/sec"
+   CGroup: /system.slice/php-fpm.service
+           ├─32374 php-fpm: master process (/etc/php/php-fpm.conf)
+           ├─32375 php-fpm: pool www
+           └─32376 php-fpm: pool www
+
+ago 14 23:30:13 localhost.localdomain systemd[1]: Starting The PHP FastCGI Process Manager...
+ago 14 23:30:13 localhost.localdomain systemd[1]: Started The PHP FastCGI Process Manager.
+```
+
