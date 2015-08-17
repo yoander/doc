@@ -20,7 +20,7 @@ PHP is a general purpose scripting language but it's mainly used for web develop
 - Web scraping
 - Low learning curve
 
-If you want to get the last features from PHP such us: variadic functions, argument unpacking, large file uploads and more then you need to compile by yourself because mayor distributions like CentOS, Debian, Ubuntu never has the las version of PHP.
+If you want to get the last features from PHP such us: variadic functions, argument unpacking, large file uploads and more then you need to compile by yourself because mayor distributions like CentOS, Debian, Ubuntu never has the last version of PHP.
 
 ## Download PHP packages
 
