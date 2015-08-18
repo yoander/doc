@@ -145,6 +145,10 @@ For security reasons we will change the owner, group and perms for /var/www
 ```bash
 # chown root:root -c /var/www/ && chmod 755  /var/www/ 
 ```
+## Auto start service at system boot
+```bash
+# systemctl enable php-fpm
+```
 
 ## Iniciamos el servicio fpm
 
