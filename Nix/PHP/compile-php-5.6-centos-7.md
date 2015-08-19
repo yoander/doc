@@ -177,7 +177,13 @@ ago 14 23:30:13 localhost.localdomain systemd[1]: Starting The PHP FastCGI Proce
 ago 14 23:30:13 localhost.localdomain systemd[1]: Started The PHP FastCGI Process Manager.
 ```
 
-## Opening port 9000 (php-fpm is listen on)
+## NGINX
+
+```bash
+# yum -y install epel-release && yum -y install nginx
+```
+
+## Opening port 80 (nginx is listen on) and 9000 (php-fpm is listen on)
 
 [FirewallD](https://fedoraproject.org/wiki/FirewallD) is the default firewall in CentOS 7.
 
@@ -191,10 +197,4 @@ Reload firewall rules
 
 ```bash
 #   firewall-cmd --reload
-```
-
-## NGINX
-
-```bash
-# yum -y install epel-release && yum -y install nginx
 ```
