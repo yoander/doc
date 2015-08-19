@@ -177,6 +177,22 @@ ago 14 23:30:13 localhost.localdomain systemd[1]: Starting The PHP FastCGI Proce
 ago 14 23:30:13 localhost.localdomain systemd[1]: Started The PHP FastCGI Process Manager.
 ```
 
+## Opening port 9000 (php-fpm is listen on)
+
+[FirewallD](https://fedoraproject.org/wiki/FirewallD) is the default firewall in CentOS 7.
+
+Adding IP range that will access to php-fpm service in trusted zone. For this example we consider entire LAN has access to php-fpm service
+
+```bash
+#  firewall-cmd --permanent --zone=trusted --add-source=192.168.0.0/24
+```
+
+Reload firewall rules
+
+```bash
+#   firewall-cmd --reload
+```
+
 ## NGINX
 
 ```bash
