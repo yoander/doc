@@ -153,13 +153,13 @@ For security reasons we will change the owner, group and perms for /var/www
 ## Iniciamos el servicio fpm
 
 ```bash
-# systemctl start php-fpm.service
+# systemctl start php-fpm
 ```
 
 ## Comprobamos el estado del servicio
 ```bash
-# systemctl start php-fpm.service
-```
+# systemctl status php-fpm
+``` 
 
 should show something like this
 ```
@@ -181,6 +181,22 @@ ago 14 23:30:13 localhost.localdomain systemd[1]: Started The PHP FastCGI Proces
 
 ```bash
 # yum -y install epel-release && yum -y install nginx
+```
+
+## Auto start service at system boot
+```bash
+# systemctl enable nginx
+```
+
+## Start NGINX service
+
+```bash
+# systemctl start nginx
+```
+
+## Comprobamos el estado del servicio
+```bash
+# systemctl status nginx
 ```
 
 ## Opening port 80 (nginx is listen on) and 9000 (php-fpm is listen on)
