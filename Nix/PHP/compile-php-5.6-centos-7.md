@@ -274,8 +274,8 @@ Adding IP range that will access to php-fpm service in trusted zone. For this ex
 
 Reload firewall rules
 
-```bash
-#   firewall-cmd --reload
+```super_user
+firewall-cmd --reload
 ```
 
 ### Testing
