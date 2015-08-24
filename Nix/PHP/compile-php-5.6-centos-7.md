@@ -34,6 +34,10 @@ Compiling from source is a good option if you want
 - Fix security issues
 - Customize/Optimize your installation
 
+### Goals
+
+After finish this tutorial you will be able to compile PHP by yourself and get some knowledge about interaction between NGINX and php-fpm service.
+
 ### Prerequisites
 
 This tutorial assumes:
