@@ -51,7 +51,7 @@ This tutorial assumes:
 
 Go to http://php.net site Downloads section and select the PHP-6.X.X version that you want to compile (5.6.12 at time of writing this tutorial), select your nearest mirror and downloat it then upload to your server using **rsycn** or **scp**. Another simple solution is typing in your console from your server
 
-```bash
+```
 # wget http://us1.php.net/distributions/php-5.6.12.tar.xz
 ```
 
@@ -59,7 +59,7 @@ Go to http://php.net site Downloads section and select the PHP-6.X.X version tha
 
 In the previous step we download a php-5.6.12.tar.xz file so we can unpackage it using tar tool
 
-```bash
+```
 # tar xJvf php-5.6.12.tar.xz
 ```
 
@@ -72,7 +72,7 @@ where
 
 ### Installing GNU Compiler Collection and essential tools
 
-```bash
+```
 # yum -y install gcc gcc-c++ make automake autoconf bison flex libtool libstdc++-devel
 ```
 
