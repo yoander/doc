@@ -2,7 +2,7 @@
 
 ### Introduction
 
-PHP is a general purpose scripting language but it's mainly used for web development. Today heavy load web sites such as: [Facebook](https://www.facebook.com) and [Wikipedia](https://www.wikipedia.org) are powered by PHP. If you are new in the PHP world and you are looking a programming language for your project you will find.
+PHP is a general purpose scripting language that it's mainly used for web development. Today heavy load web sites such as: [Facebook](https://www.facebook.com) and [Wikipedia](https://www.wikipedia.org) are powered by PHP. If you are new in the PHP world and you are looking a programming language for your project you will find.
 
 **Community features like:**
 - Active development
