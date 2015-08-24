@@ -99,7 +99,7 @@ You can modify [php-build.sh](https://raw.githubusercontent.com/yoander/sysadmin
 
 If you compile PHP with fpm support you must edit [php-build.sh](https://raw.githubusercontent.com/yoander/sysadmin/master/shscript/php-build.sh) and set the user and group under the fpm process will be run
 
-``` bash
+```
 # wget https://raw.githubusercontent.com/yoander/sysadmin/master/shscript/php-build.sh && \
 chmod a+x php-build.sh
 ```
@@ -112,7 +112,7 @@ systemd is replacement for SysV initialization. systemd also is a suite of syste
 
 First create necessary DIR that will be used during compilation process
 
-```bash
+```
 # mkdir -p /etc/php/conf.d /usr/lib/php/modules /usr/share/pear
 ```
 
@@ -132,7 +132,7 @@ where **-f** = fpm support, **s** = systemd integration
 
 ### Install
 
-```bash
+```
 #  cd php-5.6.12 && make install
 ```
 
@@ -140,13 +140,13 @@ where **-f** = fpm support, **s** = systemd integration
 
 PHP source code comes with 2 ini files versions: development and production how we're compiling for PROD server we type the following command. Adjust the ini directives according your needed
 
-```bash
+```
 # cp -v php.ini-production /etc/php/php.ini
 ```
 
 ### Creating PHP-FPM configuration file
 
-```bash
+```
 # cp -pv /etc/php/php-fpm.conf.default /etc/php/php-fpm.conf
 ```
 
@@ -168,19 +168,19 @@ listen.allowed_clients = 127.0.0.1,192.168.0.106,192.168.0.107,192.168.0.108
 
 OPcache improves PHP performance by storing precompiled script bytecode in shared memory serving request in fastest way.
 
-```bash
+```
 # echo "zend_extension=opcache.so" > /etc/php/conf.d/20-opcache.ini
 ```
 
 ### Creating PHP-FPM init service
 
-```bash
+```
 # cp -v ./sapi/fpm/php-fpm.service /usr/lib/systemd/system/php-fpm.service
 ```
 
 If the user and group under the fpm process will be run does not exists then you must created it before start php-fpm service.
 
-```bash
+```
 # groupadd --system www-data && \ 
 useradd --system -m -d /var/www  -s /usr/sbin/nologin -g www-data www-data
 ```
@@ -194,29 +194,29 @@ Above command create the system group and system user: www-data where:
 
 For security reasons we will change the owner, group and perms for /var/www
 
-```bash
+```
 # chown root:root -c /var/www/ && chmod 755  /var/www/ 
 ```
+
 ### Start php-fpm service at system boot time
-```bash
+```
 # systemctl enable php-fpm
 ```
 
 ### Start php-fpm service
-```bash
+```
 # systemctl start php-fpm
 ```
 
 ### Check fpm-service status
-```bash
+```
 # systemctl status php-fpm
 ``` 
 
 ### Create info.php file
-```super_user
-echo '<?php phpinfo();'>/var/www/info.php
 ```
-
+# echo '<?php phpinfo();'>/var/www/info.php
+```
 
 ### NGINX
 
@@ -226,7 +226,7 @@ NGINX is a web server with excelent performance and low memory footprint also it
 
 NGINX is available through [EPEL](https://fedoraproject.org/wiki/EPEL) repo
 
-```bash
+```
 # yum -y install epel-release && yum -y install nginx
 ```
 
@@ -247,18 +247,18 @@ location ~ \.php$ {
 192.168.0.104 is the IP where php-fpm service is listen on
 
 #### Start NGINX service at system boot time
-```bash
+```
 # systemctl enable nginx
 ```
 
 #### Start NGINX service
 
-```bash
+```
 # systemctl start nginx
 ```
 
 #### Check NGINX status service
-```bash
+```
 # systemctl status nginx
 ```
 
@@ -266,24 +266,24 @@ location ~ \.php$ {
 
 [FirewallD](https://fedoraproject.org/wiki/FirewallD) is the default firewall in CentOS 7.
 
-Adding IP range that will access to php-fpm service in trusted zone. For this example we consider entire LAN has access to php-fpm service
+Adding IP range that will access to php-fpm service in trusted zone. For this example we consider entire LAN has access to php-fpm service.
 
-```bash
+```
 #  firewall-cmd --permanent --zone=trusted --add-source=192.168.0.0/24
 ```
 
 Reload firewall rules
 
-```super_user
-firewall-cmd --reload
+```
+# firewall-cmd --reload
 ```
 
 ### Testing
 
 Open your browser with the IP where is listening your NGINX server
 
-```command
-firefox http://192.168.0.106/info.php
+```
+$ firefox http://192.168.0.106/info.php
 ```
 
 ### Conclusion
