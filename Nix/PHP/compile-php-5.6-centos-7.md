@@ -36,6 +36,13 @@ Compiling from source is a good option if you want
 
 ### Prerequisites
 
+This tutorial assumes that you have the following:
+
+- Some knowledge about GNU/Linux operating system
+- You are familiar with console and shell commands
+- You have some knowlegde about compilation process
+
+
 ## Download PHP packages
 
 Go to http://php.net site Downloads section and select the PHP-6.X.X version that you want to compile (5.6.12 at time of writing this articule), select your nearest mirror and downloat it then upload to your server using **rsycn** or **scp**. Another simple solution is typing in your console from your server
