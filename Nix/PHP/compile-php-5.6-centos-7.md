@@ -212,6 +212,12 @@ For security reasons we will change the owner, group and perms for /var/www
 # systemctl status php-fpm
 ``` 
 
+### Create info.php file
+```super_user
+echo '<?php phpinfo();'>/var/www/info.php
+```
+
+
 ### NGINX
 
 NGINX is a web server with excelent performance and low memory footprint also it can be used as a reverse proxy server for HTTP, HTTPS, SMTP, POP3, and IMAP protocols as well as load balancer. For this example we will used NGINX as reverse proxy for testing our PHP-FPM service.
@@ -271,3 +277,13 @@ Reload firewall rules
 ```bash
 #   firewall-cmd --reload
 ```
+
+### Testing
+
+Open your browser with the IP where is listening your NGINX server
+
+```command
+firefox http://192.168.0.106/info.php
+```
+
+### Conclusion
