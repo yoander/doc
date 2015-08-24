@@ -179,17 +179,17 @@ For security reasons we will change the owner, group and perms for /var/www
 ```bash
 # chown root:root -c /var/www/ && chmod 755  /var/www/ 
 ```
-## Start php-fpm service at system boot time
+### Start php-fpm service at system boot time
 ```bash
 # systemctl enable php-fpm
 ```
 
-## Start php-fpm service
+### Start php-fpm service
 ```bash
 # systemctl start php-fpm
 ```
 
-## Check fpm-service status
+### Check fpm-service status
 ```bash
 # systemctl status php-fpm
 ``` 
