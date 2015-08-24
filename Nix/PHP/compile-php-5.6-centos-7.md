@@ -104,7 +104,7 @@ chmod a+x php-build.sh
 
 PHP-FPM (FastCGI Process Manager) is an alternative FastCGI implementation for PHP, bundled with the official PHP distribution since version 5.3.3. Adjust fpm values according your needed
 
-systemd is replacement for SysV initialization. systemd also is a suite of system management daemons, libraries, and utilities designed as a central management and configurationfor GNU/Linux operating system.
+systemd is replacement for SysV initialization. systemd also is a suite of system management daemons, libraries, and utilities designed as a central management and configuration for GNU/Linux operating system.
 
 First create necessary DIR that will be used during compilation process
 
