@@ -66,12 +66,13 @@ where
 **v** = verbose,
 **f** = file
 
-## Installing GNU Compiler Collection and essential tools for compiling process
+### Installing GNU Compiler Collection and essential tools for compiling process
+
 ```bash
 # yum -y install gcc gcc-c++ make automake autoconf bison flex libtool libstdc++-devel
 ```
 
-## Installing dependencies
+### Installing dependencies
 
 We will compile PHP with XML, SSL, PCRE, SQLite, bzip2, curl, GD, mcrypt ... support. mcrypt is available in [EPEL](https://fedoraproject.org/wiki/EPEL) repo then you need to type
 
@@ -86,16 +87,22 @@ After
 libcurl-devel libicu-devel gd-devel readline-devel libmcrypt-devel systemd-devel
 ```
 
-## Download php-build.sh script from [Github](https://raw.githubusercontent.com/yoander/sysadmin/master/shscript/php-build.sh)
+### Download [php-build.sh](https://raw.githubusercontent.com/yoander/sysadmin/master/shscript/php-build.sh) script from Github
 
-php-build.sh script is helper for PHP compilation process. Enable the most used extensions as: curl, openssl, intl, mysql, pcre, ... and allows to install PHP in custom dir, offers options to compile PHP with Apache (prefork or worker) or fpm support. If you compile PHP with fpm support you must edit php-build.sh and set the user and group under the fpm process will be run
+php-build.sh script is helper for PHP compilation process. Enable the most used extensions as: curl, openssl, intl, mysql, pcre, ... and allows to install PHP in custom dir, offers options to compile PHP with Apache (prefork or worker) or fpm support. 
+
+You can modify php-build.sh according your neeeded.
+
+If you compile PHP with fpm support you must edit php-build.sh and set the user and group under the fpm process will be run
 
 ``` bash
 # wget https://raw.githubusercontent.com/yoander/sysadmin/master/shscript/php-build.sh && \
 chmod a+x php-build.sh
 ```
 
-## Build PHP with fpm support and systemd integration
+### Build PHP with fpm support and systemd integration
+
+PHP-FPM (FastCGI Process Manager) is an alternative FastCGI implementation for PHP, bundled with the official PHP distribution since version 5.3.3. Adjust fpm values according your needed
 
 First create necessary DIR that will be used during compilation processs
 
@@ -123,7 +130,7 @@ where **-f** = fpm support, **s** = systemd integration
 #  cd php-5.6.12 && make install
 ```
 
-## Creating configuration file
+### Creating configuration file
 
 PHP source code comes with 2 ini files versions: development and production how we're compiling for PROD server we type the following command. Adjust the ini directives according your needed
 
@@ -131,9 +138,7 @@ PHP source code comes with 2 ini files versions: development and production how 
 # cp -v php.ini-production /etc/php/php.ini
 ```
 
-## Creating PHP-FPM configuration file
-
-PHP-FPM (FastCGI Process Manager) is an alternative FastCGI implementation for PHP, bundled with the official PHP distribution since version 5.3.3. Adjust fpm values according your needed
+### Creating PHP-FPM configuration file
 
 ```bash
 # cp -pv /etc/php/php-fpm.conf.default /etc/php/php-fpm.conf
