@@ -20,9 +20,19 @@ PHP is a general purpose scripting language but it's mainly used for web develop
 - Exception handling
 - Generators
 - Web scraping
-- Low learning curve
+- Variadic functions
+- Argument unpacking
+- Large file uploads
+- Low learning curve and more
+ 
+### Why compile from source
 
-If you want to get the last features from PHP such us: variadic functions, argument unpacking, large file uploads and more then you need to compile by yourself because mayor distributions like CentOS, Debian, Ubuntu never has the last version of PHP.
+Compiling from source is a good option if you want
+
+- Upgrade to the last versions
+- Get the last features
+- Fix security vulneverabilities
+- Customize/Optimize you instalation
 
 ### Prerequisites
 
