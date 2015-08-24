@@ -1,5 +1,7 @@
 # How to Compile PHP-5.6 on Centos 7
 
+### Introduction
+
 PHP is a general purpose scripting language but it's mainly used for web development. Today heavy load web sites such as: [Facebook](https://www.facebook.com) and [Wikipedia](https://www.wikipedia.org) are powered by PHP. If you are new in the PHP world and you are looking a programming language for your project you will find.
 
 **Community features like:**
@@ -21,6 +23,8 @@ PHP is a general purpose scripting language but it's mainly used for web develop
 - Low learning curve
 
 If you want to get the last features from PHP such us: variadic functions, argument unpacking, large file uploads and more then you need to compile by yourself because mayor distributions like CentOS, Debian, Ubuntu never has the last version of PHP.
+
+### Prerequisites
 
 ## Download PHP packages
 
