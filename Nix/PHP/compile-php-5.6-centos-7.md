@@ -29,10 +29,10 @@ PHP is a general purpose scripting language that it's mainly used for web develo
 
 Compiling from source is a good option if you want
 
-- Upgrade to the last versions
+- Upgrade to the last version
 - Get the last features
-- Fix security vulneverabilities
-- Customize/Optimize you instalation
+- Fix security issues
+- Customize/Optimize your instalation
 
 ### Prerequisites
 
