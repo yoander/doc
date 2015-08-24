@@ -194,8 +194,12 @@ For security reasons we will change the owner, group and perms for /var/www
 # systemctl status php-fpm
 ``` 
 
-## NGINX
+### NGINX
 
+Nginx is a web server with excelent performance and low memory usage also It can be used as a reverse proxy server for HTTP, HTTPS, SMTP, POP3, and IMAP protocols, as well as a load balancer and an HTTP cache.
+
+
+#### Installing NGINX
 ```bash
 # yum -y install epel-release && yum -y install nginx
 ```
