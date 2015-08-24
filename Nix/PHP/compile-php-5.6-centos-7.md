@@ -150,6 +150,20 @@ PHP source code comes with 2 ini files versions: development and production how 
 # cp -pv /etc/php/php-fpm.conf.default /etc/php/php-fpm.conf
 ```
 
+### Edit /etc/php/php-fpm.conf
+
+To allow php-fpm listen on every interface you must look for listen directive and set its value like this
+
+```
+listen 9000
+```
+
+To allow some IPs can connect to php-fpm service look for listen.allowed_clients directive and set its to
+
+```php-fpm
+listen.allowed_clients listen.allowed_clients = 127.0.0.1,192.168.0.106,192.168.0.107,192.168.0.108
+```
+
 ### Enable OpCache
 
 OPcache improves PHP performance by storing precompiled script bytecode in shared memory serving request in fastest way.
