@@ -158,10 +158,10 @@ To allow php-fpm listen on every interface you must look for listen directive an
 listen 9000
 ```
 
-To allow some IPs can connect to php-fpm service look for listen.allowed_clients directive and set its to
+Restrict access to php-fpm service. Only specific IPs can connect to php-fpm service, look for listen.allowed_clients directive and set its value to
 
-```php-fpm
-listen.allowed_clients listen.allowed_clients = 127.0.0.1,192.168.0.106,192.168.0.107,192.168.0.108
+```
+listen.allowed_clients = 127.0.0.1,192.168.0.106,192.168.0.107,192.168.0.108
 ```
 
 ### Enable OpCache
@@ -232,11 +232,13 @@ Look for server section and add the following section
 location ~ \.php$ {
             root         /var/www;
             fastcgi_split_path_info ^(.+.php)(/.+)$;
-            fastcgi_pass PHP-FPM_IP_SERVICE:9000;
+            fastcgi_pass 192.168.0.104:9000;
             fastcgi_index index.php;
             include fastcgi.conf;
 	}
 ```
+
+192.168.0.104 is the IP where php-fpm service is listen on
 
 #### Start NGINX service at system boot time
 ```bash
