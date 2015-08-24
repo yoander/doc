@@ -220,7 +220,7 @@ location ~ \.php$ {
 	}
 ```
 
-#### Autostart NGINX service at system boot time
+#### Start NGINX service at system boot time
 ```bash
 # systemctl enable nginx
 ```
@@ -236,7 +236,7 @@ location ~ \.php$ {
 # systemctl status nginx
 ```
 
-## Opening port 80 (nginx is listen on) and 9000 (php-fpm is listen on)
+### Opening ports 80 (NGINX) and 9000 (php-fpm)
 
 [FirewallD](https://fedoraproject.org/wiki/FirewallD) is the default firewall in CentOS 7.
 
