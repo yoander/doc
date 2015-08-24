@@ -66,7 +66,7 @@ where
 **v** = verbose,
 **f** = file
 
-### Installing GNU Compiler Collection and essential tools for compiling process
+### Installing GNU Compiler Collection and essential tools
 
 ```bash
 # yum -y install gcc gcc-c++ make automake autoconf bison flex libtool libstdc++-devel
@@ -89,11 +89,11 @@ libcurl-devel libicu-devel gd-devel readline-devel libmcrypt-devel systemd-devel
 
 ### Download [php-build.sh](https://raw.githubusercontent.com/yoander/sysadmin/master/shscript/php-build.sh) script from Github
 
-php-build.sh script is helper for PHP compilation process. Enable the most used extensions as: curl, openssl, intl, mysql, pcre, ... and allows to install PHP in custom dir, offers options to compile PHP with Apache (prefork or worker) or fpm support. 
+[php-build.sh](https://raw.githubusercontent.com/yoander/sysadmin/master/shscript/php-build.sh) script is helper for PHP compilation process. Enable the most used extensions as: curl, openssl, intl, mysql, pcre, ... and allows to install PHP in custom dir, offers options to compile PHP with Apache (prefork or worker) or fpm support. 
 
 You can modify php-build.sh according your neeeded.
 
-If you compile PHP with fpm support you must edit php-build.sh and set the user and group under the fpm process will be run
+If you compile PHP with fpm support you must edit [php-build.sh](https://raw.githubusercontent.com/yoander/sysadmin/master/shscript/php-build.sh) and set the user and group under the fpm process will be run
 
 ``` bash
 # wget https://raw.githubusercontent.com/yoander/sysadmin/master/shscript/php-build.sh && \
@@ -124,7 +124,7 @@ Then
 
 where **-f** = fpm support, **s** = systemd integration
 
-## Install
+### Install
 
 ```bash
 #  cd php-5.6.12 && make install
@@ -144,15 +144,15 @@ PHP source code comes with 2 ini files versions: development and production how 
 # cp -pv /etc/php/php-fpm.conf.default /etc/php/php-fpm.conf
 ```
 
-## Enable OpCache
+### Enable OpCache
 
-OPcache improves PHP performance by storing precompiled script bytecode in shared memory, thereby removing the need for PHP to load and parse scripts on each request. 
+OPcache improves PHP performance by storing precompiled script bytecode in shared memory serving request in fastest way.
 
 ```bash
 # echo "zend_extension=opcache.so" > /etc/php/conf.d/20-opcache.ini
 ```
 
-## Creating PHP-FPM init service
+### Creating PHP-FPM init service
 
 ```bash
 # cp -v ./sapi/fpm/php-fpm.service /usr/lib/systemd/system/php-fpm.service
