@@ -196,7 +196,7 @@ For security reasons we will change the owner, group and perms for /var/www
 
 ### NGINX
 
-Nginx is a web server with excelent performance and low memory usage also it can be used as a reverse proxy server for HTTP, HTTPS, SMTP, POP3, and IMAP protocols as well as a load balancer and an HTTP cache. For this example we will used NGINX as reverse proxy for PHP-FPM service
+Nginx is a web server with excelent performance and low memory usage also it can be used as a reverse proxy server for HTTP, HTTPS, SMTP, POP3, and IMAP protocols as well as a load balancer and an HTTP cache. For this example we will used NGINX as reverse proxy for testing our PHP-FPM service
 
 
 #### Installing NGINX
@@ -205,6 +205,20 @@ NGINX is available in [EPEL](https://fedoraproject.org/wiki/EPEL) repo
 
 ```bash
 # yum -y install epel-release && yum -y install nginx
+```
+
+#### Edit /etc/nginx/nginx.conf
+
+Look for server section and add the following section
+
+```nginx
+location ~ \.php$ {
+            root         /var/www;
+            fastcgi_split_path_info ^(.+.php)(/.+)$;
+            fastcgi_pass PHP-FPM_IP_SERVICE:9000;
+            fastcgi_index index.php;
+            include fastcgi.conf;
+	}
 ```
 
 #### Autostart NGINX service at system boot time
