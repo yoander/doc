@@ -187,7 +187,7 @@ If the user and group under the fpm process will be run does not exists then you
 useradd --system -m -d /var/www  -s /usr/sbin/nologin -g www-data www-data
 ```
 
-Above command create the system group and system user: www-data where:
+Above command create the system group and system user www-data where:
 
 - **-m** = create home DIR if not exsist
 - **-d** = user home DIR
