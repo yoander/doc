@@ -104,7 +104,7 @@ If you compile PHP with fpm support you must edit [php-build.sh](https://raw.git
 chmod a+x php-build.sh
 ```
 
-### Build PHP with fpm support and systemd integration
+### Build PHP with FPM support and systemd integration
 
 PHP-FPM (FastCGI Process Manager) is an alternative FastCGI implementation for PHP, bundled with the official PHP distribution since version 5.3.3.
 
@@ -128,7 +128,7 @@ Then
 # ./php-build.sh -fs php-5.6.12
 ```
 
-where **-f** = fpm support, **s** = systemd integration
+where **-f** = FPM support, **s** = systemd integration
 
 ### Install
 
@@ -180,7 +180,7 @@ OPcache improves PHP performance by storing precompiled script bytecode in share
 # cp -v ./sapi/fpm/php-fpm.service /usr/lib/systemd/system/php-fpm.service
 ```
 
-If the user and group under the fpm process will be run does not exists then you must created it before start php-fpm service.
+If the user and group under the php-fpm process will be run does not exists then you must created them before start php-fpm service.
 
 ```
 # groupadd --system www-data && \ 
