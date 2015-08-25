@@ -290,4 +290,4 @@ $ firefox http://192.168.0.106/info.php
 
 ### Conclusion
 
-Now that you have learned to compile PHP by yourself you can get all advantages (fixed issues, performance improving and last features) for every PHP release without waiting for packager of your distribution of choice.
+Now that you have learned how to compile PHP by yourself you can get all advantages (bug fixes, performance improvements and lastest features) for each version of PHP without waiting for the chosen distribution packager.
