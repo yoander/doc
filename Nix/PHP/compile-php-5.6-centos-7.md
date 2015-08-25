@@ -93,7 +93,7 @@ libcurl-devel libicu-devel gd-devel readline-devel libmcrypt-devel systemd-devel
 
 ### Download [php-build.sh](https://raw.githubusercontent.com/yoander/sysadmin/master/shscript/php-build.sh) script from Github
 
-[php-build.sh](https://raw.githubusercontent.com/yoander/sysadmin/master/shscript/php-build.sh) script is helper for PHP compilation process. Enable the most used extensions as: curl, openssl, intl, mysql, pcre, ... and allows to install PHP in custom DIR, offers options to compile PHP with Apache (prefork or worker) or fpm support. 
+[php-build.sh](https://raw.githubusercontent.com/yoander/sysadmin/master/shscript/php-build.sh) script is helper for PHP compilation process. Enable the most used extensions as: curl, openssl, intl, mysql, pcre, ... and it allows to install PHP in custom DIR, it offers options to compile PHP with Apache (prefork or worker) or fpm support. 
 
 You can modify [php-build.sh](https://raw.githubusercontent.com/yoander/sysadmin/master/shscript/php-build.sh) according your needs.
 
