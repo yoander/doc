@@ -36,7 +36,7 @@ Compiling from source is a good option if you want to:
 
 ### Goals
 
-After finishing this tutorial you will be able to compile PHP by yourself and get some knowledge about interaction between NGINX and php-fpm service.
+After finishing this tutorial you will be able to compile PHP by yourself and get some knowledge about interaction between NGINX and PHP-FPM service.
 
 ### Prerequisites
 
@@ -200,17 +200,17 @@ For security reasons we will change the owner, group and perms for /var/www
 # chown root:root -c /var/www/ && chmod 755  /var/www/ 
 ```
 
-### Start php-fpm service at system boot time
+### Start PHP-FPM service at system boot time
 ```
 # systemctl enable php-fpm
 ```
 
-### Start php-fpm service
+### Start PHP-FPM service
 ```
 # systemctl start php-fpm
 ```
 
-### Check fpm-service status
+### Check PHP-FPM status
 ```
 # systemctl status php-fpm
 ``` 
