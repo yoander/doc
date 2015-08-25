@@ -27,7 +27,7 @@ PHP is a general purpose scripting language that it's mainly used for web develo
  
 ### Why compile from source
 
-Compiling from source is a good option if you want
+Compiling from source is a good option if you want to:
 
 - Upgrade to the last version
 - Get the last features
@@ -36,7 +36,7 @@ Compiling from source is a good option if you want
 
 ### Goals
 
-After finish this tutorial you will be able to compile PHP by yourself and get some knowledge about interaction between NGINX and php-fpm service.
+After finishing this tutorial you will be able to compile PHP by yourself and get some knowledge about interaction between NGINX and php-fpm service.
 
 ### Prerequisites
 
@@ -93,9 +93,9 @@ libcurl-devel libicu-devel gd-devel readline-devel libmcrypt-devel systemd-devel
 
 ### Download [php-build.sh](https://raw.githubusercontent.com/yoander/sysadmin/master/shscript/php-build.sh) script from Github
 
-[php-build.sh](https://raw.githubusercontent.com/yoander/sysadmin/master/shscript/php-build.sh) script is helper for PHP compilation process. Enable the most used extensions as: curl, openssl, intl, mysql, pcre, ... and allows to install PHP in custom dir, offers options to compile PHP with Apache (prefork or worker) or fpm support. 
+[php-build.sh](https://raw.githubusercontent.com/yoander/sysadmin/master/shscript/php-build.sh) script is helper for PHP compilation process. Enable the most used extensions as: curl, openssl, intl, mysql, pcre, ... and allows to install PHP in custom DIR, offers options to compile PHP with Apache (prefork or worker) or fpm support. 
 
-You can modify [php-build.sh](https://raw.githubusercontent.com/yoander/sysadmin/master/shscript/php-build.sh) according your neeeded.
+You can modify [php-build.sh](https://raw.githubusercontent.com/yoander/sysadmin/master/shscript/php-build.sh) according your needs.
 
 If you compile PHP with fpm support you must edit [php-build.sh](https://raw.githubusercontent.com/yoander/sysadmin/master/shscript/php-build.sh) and set the user and group under the fpm process will be run
 
@@ -106,11 +106,11 @@ chmod a+x php-build.sh
 
 ### Build PHP with fpm support and systemd integration
 
-PHP-FPM (FastCGI Process Manager) is an alternative FastCGI implementation for PHP, bundled with the official PHP distribution since version 5.3.3. Adjust fpm values according your needed
+PHP-FPM (FastCGI Process Manager) is an alternative FastCGI implementation for PHP, bundled with the official PHP distribution since version 5.3.3.
 
 systemd is replacement for SysV initialization. systemd also is a suite of system management daemons, libraries, and utilities designed as a central management and configuration for GNU/Linux operating system.
 
-First create necessary DIR that will be used during compilation process
+First create necessary DIR that will be used during compilation process.
 
 ```
 # mkdir -p /etc/php/conf.d /usr/lib/php/modules /usr/share/pear
@@ -138,11 +138,13 @@ where **-f** = fpm support, **s** = systemd integration
 
 ### Creating configuration file
 
-PHP source code comes with 2 ini files versions: development and production how we're compiling for PROD server we type the following command. Adjust the ini directives according your needed
+PHP source code comes with 2 .ini files versions: development and production. As we're compiling for PROD server we type the following command.
 
 ```
 # cp -v php.ini-production /etc/php/php.ini
 ```
+
+Adjust the ini directives according to your needs.
 
 ### Creating PHP-FPM configuration file
 
@@ -152,7 +154,7 @@ PHP source code comes with 2 ini files versions: development and production how 
 
 ### Edit /etc/php/php-fpm.conf
 
-To allow php-fpm listen on every interface you must look for listen directive and set its value like this
+To allow php-fpm listen on every interface you must look for the listen directive and set its value. Ex
 
 ```
 listen 9000
