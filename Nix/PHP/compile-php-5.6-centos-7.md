@@ -144,7 +144,7 @@ PHP source code comes with 2 .ini files versions: development and production. As
 # cp -v php.ini-production /etc/php/php.ini
 ```
 
-Adjust the ini directives according to your needs.
+Adjust the ini directives according your needs.
 
 ### Creating PHP-FPM configuration file
 
