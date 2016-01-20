@@ -47,6 +47,11 @@ Encontrar repetidos
 
 bc. prev=''; for num in $(awk -F'|' '{ print $2;}' sub_metro_area.txt |sort); do  [[ $prev == $num ]] && echo $prev; prev=$num; done
 
+Sumar una columna
+
+bc. awk '{ SUM += $3} END { print SUM }' file.txt 
+
+
 h2. Google mail
 
 bc.. elems=document.getElementsByName('t'); for (var i = 0; i < elems.length;i++) {elems[i].checked = true;}
