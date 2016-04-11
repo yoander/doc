@@ -56,3 +56,13 @@ h2. Google mail
 
 bc.. elems=document.getElementsByName('t'); for (var i = 0; i < elems.length;i++) {elems[i].checked = true;}
 
+
+h2. Wordpress
+
+bc. $ wp plugin search qtranslatex --format=csv --per-page=20 --quiet|csvsort -c rating -r|csvlook
+
+h2. ffmpeg
+
+As an example, the following command line will grab an area of size 1678x1050 on DISPLAY 0.0 starting 7 pixels from the left, and 53 pixels from the top at 25 fps:
+
+bc. $ ffmpeg -f x11grab -s 1678x1050 -i :0.0+7,53 -r 25
