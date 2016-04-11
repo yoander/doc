@@ -1,0 +1,21 @@
+h1. Compilar NGINX
+
+h2. Descargar NGINX
+
+bc. $ wget url
+
+h2. Descompactar
+
+bc. $ nginx-1.7.9.tar.gz
+
+h2. Instalar dependencias
+
+bc. $ sudo apt-get -y install make autoconf gcc libpcre3-dev libssl-dev libxml2-dev libxslt1-dev
+
+h2. Configurar
+
+bc. cd nginx-1.7.9 && ./configure --prefix=/usr/local/nginx --sbin-path=/usr/sbin/nginx --conf-path=/etc/nginx/nginx.conf --error-log-path=/var/log/nginx/error.log --http-log-path=/var/log/nginx/access.log --pid-path=/run/nginx.pid --lock-path=/run/lock/subsys/nginx --user=www-data --group=www-data --with-file-aio --with-ipv6 --with-http_ssl_module --with-http_realip_module --with-http_addition_module --with-http_xslt_module --with-http_sub_module --with-http_gunzip_module --with-http_gzip_static_module --with-http_random_index_module --with-http_secure_link_module --with-http_stub_status_module --with-pcre --with-debug
+
+h2. Instalar
+
+bc. $ make && sudo make install
