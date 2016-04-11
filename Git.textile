@@ -18,7 +18,7 @@ bc. [alias]
     unstg = reset HEAD --
     # Do not delete file from the working tree
     rm = rm --cached
-    # Delete file from the index and working tree    
+    # Delete file from the index and working tree
     del = rm
     rs = reset
     rb = rebase
@@ -71,3 +71,52 @@ h4. Exclude a file from the last commit
 
 bc. git reset --soft HEAD~1
 git reset HEAD fich
+
+
+h2. Ignorando ficheros temporalmente
+
+bc. git update-index --assume-unchanged <file>
+git update-index --no-assume-unchanged <file>
+
+h2. Añadir al índice solo partes de un fichero
+
+bc. git add -p fich
+
+h2. Ramas
+
+h3. Fetching
+
+bc. $ git fetch [remote_name]
+$ git fetch origin
+
+h3. Getting
+
+Create a new branch: severfix from origin/serverfirx (Pulling from remote)
+
+bc. $ git checkout -b [local_branch_name] [remote_name]/[remote_branch_name]
+git checkout -b serverfix origin/serverfirx
+
+Create a new branch: severfix from master (Pulling from local, if from is no spcify default branch = current branch)
+
+bc. $ git checkout -b serverfix master
+
+h3. Pushing
+
+bc. $ git push [remote_name] [branch]
+git push origin serverfix
+
+h3. Pulling
+
+bc. git pull [remote_name] [branch]
+$ git pull origin serverfix
+
+h3. Deleting
+
+Remote deleting
+
+bc. $  git push [remote_name] :[remote_branch_name]
+git push origin :serverfix
+
+Local deleting
+
+bc. $ git branch -[Dd] localbranch
