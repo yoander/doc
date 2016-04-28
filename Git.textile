@@ -23,6 +23,14 @@ bc. [alias]
     rs = reset
     rb = rebase
 
+h3. Proxy Configuration
+
+bc. [http]
+    proxy = http://user:password@proxy-server:proxy-port
+    # Useful if your proxy only allow know user agent
+    useragent = Mozilla/4.0
+
+
 h2. Export Git repository (Make visible to everybody for read only access)
 
 h3. Go to repo dir
