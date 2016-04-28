@@ -51,6 +51,10 @@ Sumar una columna
 
 bc. awk '{ SUM += $3} END { print SUM }' file.txt 
 
+Expresion regular
+
+bc.  awk -F'|' 'tolower($7) ~ /novotel\slondon/ {print $7;}' Extended.csv
+awk -F'|' 'tolower($7) ~ /novotel/ {print "citycode: "$4,"/ cityname: "$5, "/ hotelname: "$7;}' Extended.csv
 
 h2. Google mail
 
