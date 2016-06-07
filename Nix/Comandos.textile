@@ -53,7 +53,7 @@ bc. awk '{ SUM += $3} END { print SUM }' file.txt
 
 Expresion regular
 
-bc.  awk -F'|' 'tolower($7) ~ /novotel\slondon/ {print $7;}' Extended.csv
+bc. awk -F'|' 'tolower($7) ~ /novotel\slondon/ {print $7;}' Extended.csv
 awk -F'|' 'tolower($7) ~ /novotel/ {print "citycode: "$4,"/ cityname: "$5, "/ hotelname: "$7;}' Extended.csv
 
 h2. Google mail
@@ -70,3 +70,7 @@ h2. ffmpeg
 As an example, the following command line will grab an area of size 1678x1050 on DISPLAY 0.0 starting 7 pixels from the left, and 53 pixels from the top at 25 fps:
 
 bc. $ ffmpeg -f x11grab -s 1678x1050 -i :0.0+7,53 -r 25
+
+h2. Fú
+
+bc. find . -type f -name 'Hotel*' | while read file; do [[ "$file" =~ \.([A-Z]{3})\. ]] && {  sed -r 's/(.*)/'${BASH_REMATCH[1]}'\1/' $file; };donefind . -type f -name 'Hotel*' | while read file; do [[ "$file" =~ \.([A-Z]{3})\. ]] && {  sed -r 's/(.*)/'${BASH_REMATCH[1]},'\1/' $file; };done
