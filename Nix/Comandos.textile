@@ -74,3 +74,5 @@ bc. $ ffmpeg -f x11grab -s 1678x1050 -i :0.0+7,53 -r 25
 h2. Fú
 
 bc. find . -type f -name 'Hotel*' | while read file; do [[ "$file" =~ \.([A-Z]{3})\. ]] && {  sed -r 's/(.*)/'${BASH_REMATCH[1]}'\1/' $file; };donefind . -type f -name 'Hotel*' | while read file; do [[ "$file" =~ \.([A-Z]{3})\. ]] && {  sed -r 's/(.*)/'${BASH_REMATCH[1]},'\1/' $file; };done
+
+bc. find . -type f -name 'Hotels.???.*' | sort | xargs cat > Hotels.csv
