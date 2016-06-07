@@ -61,6 +61,10 @@ Show history for the last 2 commits
 
 bc. git log -n 2
 
+View file version for specifi commit
+
+bc. git show commit-id:filename
+
 h3. Rewrite history
 
 Note: Rewrite history only for commits that are in your local branch
