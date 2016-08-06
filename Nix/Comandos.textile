@@ -6,7 +6,7 @@ bc. $ find DIR -name nombre-a-buscar -type f -print0  | while read -d $'\0' file
 
 h2. Encuestar al servidores NS de google.com (Verficar cnx cada 30 s) 
 
-bc. $ watch -n 30 "dig www.google.com|sed -s 's/^;[^(www)].*//'|uniq
+bc(bash). $ watch -n 30 "dig www.google.com|sed -s 's/^;[^(www)].*//'|uniq
 
 h2. Renombrar en masa
 
