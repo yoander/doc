@@ -132,3 +132,9 @@ git push origin :serverfix
 Local deleting
 
 bc. $ git branch -[Dd] localbranch
+
+h2. Tags
+
+h3. Pushing
+
+bc. git push origin --tags
