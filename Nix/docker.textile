@@ -1,4 +1,17 @@
+h2. Run docker in interactive mode.
+
 bc. $ docker run -i -t ubuntu /bin/bash       
-$ docker run -d -t -p 10000:80 systemsector/openemr:v420 /bin/bash
-$ docker run -P  -v /home/yoander/desktop:/root/desktop -i -t debian:latest /bin/bash
-$ docker run -d -t -p 8080:80 -p 4000:4000 --link=mariadb -v /home/yoander/www:/var/www/html/ -i -t sedlav/php:7.0.4-apache /bin/bash
+
+h2. Run docker in daemon mode and redirect ports 10000 => 80
+
+bc. $ docker run -d -t -p 10000:80 systemsector/openemr:v420 /bin/bash
+
+h2. Run docker in interactive mode and redirect any host ports to guest exposed port
+
+bc. $ docker run -P  -v /home/yoander/desktop:/root/desktop -i -t debian:latest /bin/bash
+
+h2. Run docker in daemon mode and link to mariadb container also mount /home/yoander/www (host) in /var/www/html/ (guest)
+
+bc. $ docker run -d -t -p 8080:80 -p 4000:4000 --link=mariadb -v /home/yoander/www:/var/www/html/ -i -t sedlav/php:7.0.4-apache /bin/bash
+
+bc. docker run --name nginx -v /var/www/php7:/usr/share/nginx/html  -v /var/www/nginx:/etc/nginx --link=php-fpm -p 8081:80 -d nginx:stable-alpine
