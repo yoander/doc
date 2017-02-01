@@ -4,7 +4,7 @@ h2. Encontrar ficheros y ejecutar una acción sobre ellos
 
 bc. $ find DIR -name nombre-a-buscar -type f -print0  | while read -d $'\0' file; do sentencias; done
 
-h2. Encuestar al servidores NS de google.com (Verficar cnx cada 30 s) 
+h2. Encuestar al servidores NS de google.com (Verficar cnx cada 30 s)
 
 bc(bash). $ watch -n 30 "dig www.google.com|sed -s 's/^;[^(www)].*//'|uniq
 
@@ -18,9 +18,9 @@ bc. $ prename [-v] [-n] [-f] exp-regular ficheros
 
 **donde:**
 
-**-v, --verbose:** Muestra el nombre de los ficheros que fueron renombrados exitosamente 
-**-n, --noact:** Simula la operación de renombrado 
-**-f, --force: **Sobreescribe los ficheros existentes	
+**-v, --verbose:** Muestra el nombre de los ficheros que fueron renombrados exitosamente
+**-n, --noact:** Simula la operación de renombrado
+**-f, --force: **Sobreescribe los ficheros existentes
 **exp-regular:** Es un patrón compatible con PREC
 
 h3. Ejemplos
@@ -29,12 +29,12 @@ Elimina la extensión .bak de todos los ficheros del DIR actual
 
 bc. $ rename 's/\.bak$//' *.bak
 
-Covierte a minúsculas el nombre de todos ficheros del DIR actual 
+Covierte a minúsculas el nombre de todos ficheros del DIR actual
 
 bc. $ rename 'y/A-Z/a-z/' *
 
 
-Encuentra todos los ficheros cuyo nombre contiene más de un guión y sustituye los guiones por uno solo 
+Encuentra todos los ficheros cuyo nombre contiene más de un guión y sustituye los guiones por uno solo
 
 bc. $ rename 's/-{2,}/-/g' *
 
@@ -49,12 +49,17 @@ bc. prev=''; for num in $(awk -F'|' '{ print $2;}' sub_metro_area.txt |sort); do
 
 Sumar una columna
 
-bc. awk '{ SUM += $3} END { print SUM }' file.txt 
+bc. awk '{ SUM += $3} END { print SUM }' file.txt
 
 Expresion regular
 
 bc. awk -F'|' 'tolower($7) ~ /novotel\slondon/ {print $7;}' Extended.csv
-awk -F'|' 'tolower($7) ~ /novotel/ {print "citycode: "$4,"/ cityname: "$5, "/ hotelname: "$7;}' Extended.csv
+
+bc. awk -F'|' 'tolower($7) ~ /novotel/ {print "citycode: "$4,"/ cityname: "$5, "/ hotelname: "$7;}' Extended.csv
+
+bc. awk -F, 'NR<2{print $0;next}{ tolower($1) ~ /serie/ || tolower($2) ~ /serie/; print $1","$2","$3|"sort -t, -r -n -k3"}'
+
+bc. docker-compose exec php-fpm wp plugin search serie --path=/var/www/html/librebyte --allow-root --per-page=200 --quiet --format=csv|awk -F, 'NR<2{print $0;next} tolower($1) ~ /serie/ || tolower($2) ~ /serie/ { print $1","$2","$3|"sort -t, -r -n -k3";}'
 
 h2. Google mail
 
@@ -71,8 +76,33 @@ As an example, the following command line will grab an area of size 1678x1050 on
 
 bc. $ ffmpeg -f x11grab -s 1678x1050 -i :0.0+7,53 -r 25
 
+Convert a video file
+
+bc. ffmpeg -i input-file.mp4 -c:v libvpx -crf 10 -b:v 1M -c:a libvorbis output-file.webm
+
+bc. ffmpeg -i 2016-12-26\ 18-47-17.mkv -vtag h264  -c:v h264 -s:v "1600x900" -c:a libvorbis -aspect 1.778 -ss 00:00:06.30 -r 30 -q:v 1 output-file.mkv
+
 h2. Fú
 
-bc. find . -type f -name 'Hotel*' | while read file; do [[ "$file" =~ \.([A-Z]{3})\. ]] && {  sed -r 's/(.*)/'${BASH_REMATCH[1]}'\1/' $file; };donefind . -type f -name 'Hotel*' | while read file; do [[ "$file" =~ \.([A-Z]{3})\. ]] && {  sed -r 's/(.*)/'${BASH_REMATCH[1]},'\1/' $file; };done
+bc. find . -type f -name 'Hotel*' | while read file; do [[ "$file" =~ \.([A-Z]{3})\. ]] && {  sed -r 's/(.*)/'${BASH_REMATCH[1]}'\1/' $file; };done
 
 bc. find . -type f -name 'Hotels.???.*' | sort | xargs cat > Hotels.csv
+
+bc. find . -name '*.txt' -type f -print0 | while read -d $'' file; do egrep -Zh 'Package\s+[[:digit:]]|Reference' "$file"|sed 'N;s/\n/|/';done
+
+bc.  grep -h '<ResortCode>' a2b-static.xml |sed -r 's/<\/?ResortCode>//g'|sed -r 's/\s+//g'|sort|uniq -d > duplicated.txt
+
+
+h2. Replace a date in this format Date: YYYY-m-d HH:MM to  YYYY-m-d HH:MM:SS
+
+bc. sed -r 's/Date:.*[[:blank:]][[:digit:]]{2}:[[:digit:]]{2}$/R/' content/cli/How\ To\ Check\ Laptop\ Battery\ Status\ from\ Command\ Line.md 
+
+h2. Replace Tags: tag1, tag2, tag3 por Tags: [tag1, tag2, tag3] 
+
+bc. $ sed -ri 's/Tags:\s*(.*)/Tags: \[\1\]/;s/Category:\s*(.*)/Categories: \[\1\]/'  content/{news,nosql,programming}/*
+
+
+h2. Convert all tags to lowercase
+
+bc. find  -type f -print0 | xargs -0 -I{} sed -r -i '/Tags:\s(.*)/y/ABCDEFGHIJKLMNÑOPQRSTUWXYZ/abcdefghijklmnñopqrstuwxyz/' {}
+

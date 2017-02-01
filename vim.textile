@@ -1,0 +1,39 @@
+h1. Vim tips
+
+h2. When you edit a file without sudo
+
+bc. :w !sudo tee % 
+
+h2. Travel back in time
+
+bc. :earlier 15m, :later
+
+h2. Get the current date pasted into your document.
+
+bc. .!date
+
+h2. Hex editor
+
+bc. :%!xxd
+
+Revert it back with 
+
+bc. :%!xxd -r
+
+h2. Several useful delete examples
+
+* diw to delete the current word and ciw to cut the current word.
+* de is like diw, however it opens the opportunity to delete every next word just by pressing dot(.).
+* di( delete within the current parents.
+* di" to delete the text between the quotes.
+* dab delete around brackets.
+* daB delete around curly brackets.
+
+h2. Miscellaneous useful commands
+
+* zz Scroll down the screen to make the current line appear in the middle. Very useful to put some chunk of code in focus.
+* % finds and moves the cursor to the matching parentheses.
+* :%TOhtml Creates HTML version of the current document. (Try it, it is very useful).
+* vim http://rosehosting.com/ Vim can also open up URLs assuming they go directly to static HTML files.
+* guw and gUw change next words to lowercase and uppercase respectively.
+* guu and gUU change current line to lowercase and uppercase respectively.

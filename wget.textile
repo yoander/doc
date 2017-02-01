@@ -1,0 +1,5 @@
+https://sourceforge.net/projects/mywebsql/files/stable/mywebsql-3.6.zip/download--2015-05-12 16:39:00--  https://sourceforge.net/projects/mywebsql/files/stable/mywebsql-3.6.zip/download
+Resolving sourceforge.net... 216.34.181.60
+Connecting to sourceforge.net|216.34.181.60|:443... connected.
+ERROR: certificate common name “*.sourceforge.net” doesn’t match requested host name “sourceforge.net”.
+To connect to sourceforge.net insecurely, use ‘--no-check-certificate’.

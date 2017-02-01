@@ -1,0 +1,4 @@
+bc. 
+if (empty($countryCode = Input::read('countrycode'))) {
+    $countryCode = 'US';
+}
